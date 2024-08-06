@@ -1,0 +1,9 @@
+print("Welcome to the BMI calculator.")
+height = float(input("What is your height in meters (m)?\n"))
+weight = float(input("What is your weight in kilograms (kg)?\n"))
+
+# Round to 2 decimal places: str(round(answer, 2))
+
+bmi = round(weight / height ** 2, 2)
+
+print(f"Your BMI is {bmi}.")
