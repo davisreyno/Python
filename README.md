@@ -1,5 +1,5 @@
 # MyPython Repo 
 
-A repository consisting of my learning, application and experiemntations with Python. 
+A repo consisting of my learning, applying and experimenting with Python. 
 
 # 🐍
