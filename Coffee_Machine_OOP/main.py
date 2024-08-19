@@ -10,7 +10,7 @@ from money_machine import MoneyMachine
 # Make Coffee
 
 money_machine = MoneyMachine()
-coffee_maker =CoffeeMaker()
+coffee_maker = CoffeeMaker()
 
 money_machine.report()
 coffee_maker.report()
