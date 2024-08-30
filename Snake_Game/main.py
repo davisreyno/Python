@@ -25,20 +25,6 @@ snake = Snake()
 food = Food()
 scoreboard = Scoreboard() 
 
-
-starting_positions = [(0, 0), (-20, 0), (-40, 0)]
-
-segments = []
-
-# Creates snake
-
-# for position in starting_positions:
-#     new_segment = Turtle("square")
-#     new_segment.color("black")
-#     new_segment.penup()
-#     new_segment.goto(position)
-#     segments.append(new_segment)
-
 screen.listen()
 screen.onkey(snake.up,"Up")
 screen.onkey(snake.down,"Down")
@@ -63,7 +49,7 @@ while game_is_on:
         scoreboard.game_over()
 
     # Detect collision with tail. Game over. 
-    for segment in snake.segment([1:]): 
+    for segment in snake.segment[1:]): 
         if snake.head.distance(segment) < 10: 
             game_is_on = False 
             scoreboard.game_over() 
