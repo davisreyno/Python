@@ -25,11 +25,18 @@ snake = Snake()
 food = Food()
 scoreboard = Scoreboard() 
 
+# Move with arrow keys
 screen.listen()
 screen.onkey(snake.up,"Up")
 screen.onkey(snake.down,"Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
+
+# Move with WASD
+screen.onkey(snake.up,"w")
+screen.onkey(snake.down,"s")
+screen.onkey(snake.left, "a")
+screen.onkey(snake.right, "d")
 
 game_is_on = True
 while game_is_on:
@@ -37,7 +44,7 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
 
-    # Detect collision with food, distaqnce() from Turtle 
+    # Detect collision with food, distance() from Turtle 
     if snake.head.distance(food) < 13:
         food.refresh() 
         snake.extend()
