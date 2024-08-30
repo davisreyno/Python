@@ -9,8 +9,9 @@
 
 # See turtle documentation at https://docs.python.org/3/library/turtle.html#color-control
 
-from turtle import Screen, Turtle
+from turtle import Screen
 from snake import Snake
+from food import Food
 import time
 
 screen = Screen()
@@ -33,6 +34,7 @@ for position in starting_positions:
     segments.append(new_segment)
 
 snake = Snake()
+food = Food()
 
 screen.listen()
 screen.onkey(snake.up,"Up")
@@ -44,8 +46,6 @@ game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
-
     snake.move()
-
 
 screen.exitonclick()
