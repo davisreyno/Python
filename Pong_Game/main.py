@@ -1,8 +1,4 @@
-# Objectives:
-# Create the screen
-# Create and move a paddle
-# Create another paddle
-# Create the ball and make it move
+
 # Detect collision with the wall and bounce
 # Detect collision with paddle
 # Detect when paddle misses
@@ -10,6 +6,8 @@
 
 from turtle import Screen, Turtle
 from paddle import Paddle
+from ball import Ball 
+import time
 
 # Create a screen
 screen = Screen()
@@ -21,6 +19,7 @@ screen.tracer(0) # Turns of animation but will need refresh with screen.update()
 # Create left and right paddle
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
+ball = Ball()
 
 # Move paddles
 screen.listen()
@@ -31,6 +30,8 @@ screen.onkey(l_paddle.go_down, "s")
 
 game_is_on = True
 while game_is_on:
+    time.sleep(0.1)
     screen.update()
+    ball.move()
 
 screen.exitonclick()
