@@ -2,7 +2,6 @@ from turtle import Turtle
 import random 
 
 # Class inheritance 
-
 class Food(Turtle): 
 
     def __init__(self):
@@ -14,8 +13,7 @@ class Food(Turtle):
         self.speed("fastest")
         self.refresh() 
 
-        # Food moves to (new) random location, upon collision 
-
+    # Food moves to (new) random location, upon collision 
     def refresh(self): 
         random_x = random.randint(-280, 280)
         random_y = random.randint(-280, 280)

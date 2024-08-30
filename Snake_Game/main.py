@@ -32,12 +32,12 @@ segments = []
 
 # Creates snake
 
-for position in starting_positions:
-    new_segment = Turtle("square")
-    new_segment.color("black")
-    new_segment.penup()
-    new_segment.goto(position)
-    segments.append(new_segment)
+# for position in starting_positions:
+#     new_segment = Turtle("square")
+#     new_segment.color("black")
+#     new_segment.penup()
+#     new_segment.goto(position)
+#     segments.append(new_segment)
 
 screen.listen()
 screen.onkey(snake.up,"Up")
@@ -52,15 +52,22 @@ while game_is_on:
     snake.move()
 
     # Detect collision with food, distaqnce() from Turtle 
-
     if snake.head.distance(food) < 13:
         food.refresh() 
+        snake.extend()
         scoreboard.increase_score()
 
     # Detect collision with wall. Game over. 
-
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         game_is_on = False 
         scoreboard.game_over()
+
+    # Detect collision with tail. Game over. 
+    for segment in snake.segments: 
+        if segment == snake.head: 
+            pass
+        elif snake.head.distance(segment) < 10: 
+            game_is_on = False 
+            scoreboard.game_over() 
 
 screen.exitonclick()
