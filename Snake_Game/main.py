@@ -48,4 +48,9 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
 
+    # Detect collision with food, distaqnce() from Turtle 
+
+    if snake.head.distance(food) < 13:
+        food.refresh() 
+
 screen.exitonclick()
